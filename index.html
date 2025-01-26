@@ -27,8 +27,8 @@
             
             // Проверка на наличие объекта
             if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.WebAppUser ) {
-                const tgId = window.Telegram.WebApp.WebAppUser .id; // Получение ТГ ID
-                const username = window.Telegram.WebApp.WebAppUser .username; // Получение юзернейма
+                const tgId = window.Telegram.WebApp.WebAppUser.id; // Получение ТГ ID
+                const username = window.Telegram.WebApp.WebAppUser.username; // Получение юзернейма
                 document.getElementById('tg-id').innerText = `ТГ ID: ${tgId}`;
                 document.getElementById('username').innerText = `Юзернейм: ${username}`;
             } else {
