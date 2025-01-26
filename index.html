@@ -24,12 +24,22 @@
         // Встроенный JavaScript
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Страница загружена и готова к взаимодействию!');
-            window.Telegram.WebApp.WebAppUser.id //подставить на место тг айди
+            
+            // Проверка на наличие объекта
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.WebAppUser ) {
+                const tgId = window.Telegram.WebApp.WebAppUser .id; // Получение ТГ ID
+                const username = window.Telegram.WebApp.WebAppUser .username; // Получение юзернейма
+                document.getElementById('tg-id').innerText = `ТГ ID: ${tgId}`;
+                document.getElementById('username').innerText = `Юзернейм: ${username}`;
+            } else {
+                document.getElementById('tg-id').innerText = 'ТГ ID: недоступен';
+                document.getElementById('username').innerText = 'Юзернейм: недоступен';
+            }
         });
     </script>
 </head>
 <body>
-    <h1>ТГ ID</h1>
-    <h1>Юзернейм</h1>
+    <h1 id="tg-id">ТГ ID</h1>
+    <h1 id="username">Юзернейм</h1>
 </body>
 </html>
